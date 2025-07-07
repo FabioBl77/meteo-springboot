@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Meteo Open-Meteo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>Meteo giornaliero con Open-Meteo</h1>
+
+<label for="citySelect">Seleziona una città:</label>
+<select id="citySelect" onchange="fetchWeather()">
+    <option th:each="city : ${cities}" th:value="${city}" th:text="${city}"></option>
+</select>
+
+<canvas id="tempChart" width="800" height="400"></canvas>
+
+<!-- <script>
+    async function fetchWeather() {
+        const city = document.getElementById("citySelect").value;
+        const res = await fetch(`/api/weather/${city}`);
+        const data = await res.json();
+
+        const labels = data.hourly.time.map(t => t.split("T")[1]);
+        const temps = data.hourly.temperature_2m;
+
+        const ctx = document.getElementById("tempChart").getContext("2d");
+        if (window.myChart) window.myChart.destroy();
+
+        window.myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: `Temperatura in ${city}`,
+                    data: temps,
+                    borderColor: 'blue',
+                    fill: false
+                }]
+            }
+        });
+    }
+
+    window.onload = () => {
+        fetchWeather(); // carica prima città
+    };
+</script> -->
+<script>
+    async function fetchWeather() {
+        const city = document.getElementById("citySelect").value;
+        const res = await fetch(`/api/weather/${city}`);
+        const data = await res.json();
+
+        const allTimes = data.hourly.time;
+        const allTemps = data.hourly.temperature_2m;
+
+        // Data odierna in formato YYYY-MM-DD
+        const today = new Date().toISOString().split("T")[0];
+
+        // Filtra solo i dati di oggi
+        const filteredTimes = [];
+        const filteredTemps = [];
+
+        for (let i = 0; i < allTimes.length; i++) {
+            if (allTimes[i].startsWith(today)) {
+                filteredTimes.push(allTimes[i].split("T")[1]); // orario (es. 13:00)
+                filteredTemps.push(allTemps[i]);
+            }
+        }
+
+        const ctx = document.getElementById("tempChart").getContext("2d");
+        if (window.myChart) window.myChart.destroy();
+
+        window.myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: filteredTimes,
+                datasets: [{
+                    label: `Temperatura oggi a ${city}`,
+                    data: filteredTemps,
+                    borderColor: 'blue',
+                    backgroundColor: 'lightblue',
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: {
+                            display: true,
+                            text: '°C'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Ora'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    window.onload = () => {
+        fetchWeather();
+    };
+</script>
+
+</body>
+</html>

@@ -1,41 +1,58 @@
 # 🌤️ Meteo Città - Spring Boot + Docker
 
-Applicazione web che consente di visualizzare le **temperature orarie della giornata odierna** per alcune città italiane, tramite l'API gratuita di [Open-Meteo](https://open-meteo.com/).
+# Meteo Città - Spring Boot + Docker + Thymeleaf
 
-Frontend realizzato con **Thymeleaf**, backend in **Spring Boot**, containerizzato con **Docker**.
+Applicazione web realizzata con **Spring Boot** che mostra le temperature orarie della giornata odierna per alcune città italiane, utilizzando l’API gratuita di [Open-Meteo](https://open-meteo.com/).
 
----
-
-## 📸 Screenshot
-
-![screenshot](inserisci_qua_un_link_o_screen_della_webapp.png)
+Il frontend è sviluppato con **Thymeleaf** e integra un **grafico interattivo** per visualizzare le temperature. Il backend utilizza Spring Boot per effettuare chiamate HTTP all'API meteo. L’intero progetto è containerizzato con Docker e supporta l’avvio tramite `docker-compose`.
 
 ---
 
-## 🏗️ Funzionalità
+## Funzionalità principali
 
-- Select per scegliere una città (Roma, Milano, Napoli, Torino, Firenze)
-- Chiamata API verso `open-meteo.com`
-- Visualizzazione temperatura nelle 24 ore tramite grafico (es. Chart.js)
-- Frontend semplice, chiaro e responsive
-
----
-
-## ⚙️ Tech stack
-
-- **Java 17**
-- **Spring Boot**
-- **Thymeleaf**
-- **RestTemplate**
-- **Docker**
-- **HTML + JS + Chart.js**
+- Menu a tendina per scegliere una città italiana
+- Recupero automatico dei dati meteo orari tramite API REST
+- Visualizzazione in tempo reale delle **temperature nelle 24 ore**
+- Grafico dinamico realizzato con **Chart.js**
+- Frontend HTML + Thymeleaf
+- Progetto completamente eseguibile via Docker o Docker Compose
 
 ---
 
-## 🚀 Avvio rapido
+## Stack tecnologico
 
-### 1. Clona la repository
+- Java 17
+- Spring Boot 3
+- Thymeleaf
+- RestTemplate
+- Chart.js
+- Docker
+- Docker Compose
+
+---
+
+## Città supportate
+
+- Rome  
+- Milan  
+- Naples  
+- Turin  
+- Florence  
+
+Coordinate geografiche predefinite nella classe `CityCoordinates.java`.
+
+---
+
+## Come eseguire il progetto
+
+### Opzione 1: Avvio manuale con Maven
 
 ```bash
 git clone https://github.com/FabioBl77/meteo-springboot.git
 cd meteo-springboot
+
+# Costruzione del progetto
+./mvnw clean package -DskipTests
+
+# Esecuzione
+java -jar target/*.jar

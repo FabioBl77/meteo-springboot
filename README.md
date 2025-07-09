@@ -57,19 +57,7 @@ cd meteo-springboot
 
 # Avvio tramite Docker Compose
 docker-compose up --build
+
+# Aprire pagina su localhost:8080
 ```
 
-
-### Opzione 2: Avvio manuale con Maven
-
-```bash
-git clone https://github.com/FabioBl77/meteo-springboot.git
-cd meteo-springboot
-
-# Costruzione del progetto
-./mvnw clean package -DskipTests
-
-# Esecuzione
-java -jar target/*.jar
-
-```

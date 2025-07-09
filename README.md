@@ -48,7 +48,18 @@ Coordinate geografiche predefinite nella classe `CityCoordinates.java`.
 
 ## Come eseguire il progetto
 
-### Opzione 1: Avvio manuale con Maven
+### Opzione 1: Avvio tramite docker compose
+
+```bash
+git clone https://github.com/FabioBl77/meteo-springboot.git
+cd meteo-springboot
+
+# Avvio tramite Docker Compose
+docker-compose up --build
+```
+
+
+### Opzione 2: Avvio manuale con Maven
 
 ```bash
 git clone https://github.com/FabioBl77/meteo-springboot.git
@@ -59,3 +70,5 @@ cd meteo-springboot
 
 # Esecuzione
 java -jar target/*.jar
+
+```

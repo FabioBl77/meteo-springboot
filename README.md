@@ -10,6 +10,7 @@ Il frontend è sviluppato con **Thymeleaf** e integra un **grafico interattivo**
 
 ![image](https://github.com/user-attachments/assets/08d0006e-8960-43e4-bae7-dd090d488291)
 
+---
 
 ## Funzionalità principali
 

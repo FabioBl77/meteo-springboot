@@ -1,4 +1,4 @@
-# 🌤️ Meteo Città - Spring Boot + Docker
+# Meteo Città - Spring Boot + Docker
 
 # Meteo Città - Spring Boot + Docker + Thymeleaf
 

@@ -14,36 +14,6 @@
 
 <canvas id="tempChart" width="800" height="400"></canvas>
 
-<!-- <script>
-    async function fetchWeather() {
-        const city = document.getElementById("citySelect").value;
-        const res = await fetch(`/api/weather/${city}`);
-        const data = await res.json();
-
-        const labels = data.hourly.time.map(t => t.split("T")[1]);
-        const temps = data.hourly.temperature_2m;
-
-        const ctx = document.getElementById("tempChart").getContext("2d");
-        if (window.myChart) window.myChart.destroy();
-
-        window.myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: `Temperatura in ${city}`,
-                    data: temps,
-                    borderColor: 'blue',
-                    fill: false
-                }]
-            }
-        });
-    }
-
-    window.onload = () => {
-        fetchWeather(); // carica prima città
-    };
-</script> -->
 <script>
     async function fetchWeather() {
         const city = document.getElementById("citySelect").value;

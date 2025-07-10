@@ -70,11 +70,11 @@ docker-compose up --build
 git clone https://github.com/FabioBl77/meteo-springboot.git
 cd meteo-springboot
 
-# Rendere eseguibile lo script:
-chmod +x start.sh
+# Se sei su PowerShell, usa:
+.\start.bat
 
-# Nel terminale, esegui:
-.\start.sh
+#Se sei su Prompt dei comandi (CMD)
+start.bat
 
 # Aprire pagina su localhost:8080
 ```
@@ -85,12 +85,11 @@ chmod +x start.sh
 git clone https://github.com/FabioBl77/meteo-springboot.git
 cd meteo-springboot
 
-# Se sei su PowerShell, usa:
-.\start.bat
+# Rendere eseguibile lo script:
+chmod +x start.sh
 
-#Se sei su Prompt dei comandi (CMD)
-start.bat
+# Nel terminale, esegui:
+.\start.sh
 
 # Aprire pagina su localhost:8080
 ```
-

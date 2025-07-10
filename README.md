@@ -57,7 +57,39 @@ git clone https://github.com/FabioBl77/meteo-springboot.git
 cd meteo-springboot
 
 # Avvio tramite Docker Compose
+docker-compose down
 docker-compose up --build
+
+
+# Aprire pagina su localhost:8080
+```
+
+### Opzione 2: Avvio tramite start.bat su windows
+
+```bash
+git clone https://github.com/FabioBl77/meteo-springboot.git
+cd meteo-springboot
+
+# Rendere eseguibile lo script:
+chmod +x start.sh
+
+# Nel terminale, esegui:
+.\start.sh
+
+# Aprire pagina su localhost:8080
+```
+
+### Opzione 3: Avvio tramite start.sh su Unix/Linux/macOS
+
+```bash
+git clone https://github.com/FabioBl77/meteo-springboot.git
+cd meteo-springboot
+
+# Se sei su PowerShell, usa:
+.\start.bat
+
+#Se sei su Prompt dei comandi (CMD)
+start.bat
 
 # Aprire pagina su localhost:8080
 ```

@@ -37,11 +37,11 @@ Il frontend è sviluppato con **Thymeleaf** e integra un **grafico interattivo**
 
 ## Città supportate
 
-- Rome  
-- Milan  
-- Naples  
-- Turin  
-- Florence  
+- Roma  
+- Milano  
+- Napoli 
+- Torino  
+- Firenze 
 - Settimo Torinese
 
 Coordinate geografiche predefinite nella classe `CityCoordinates.java`.

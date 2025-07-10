@@ -1,13 +1,4 @@
 @echo off
-echo -------------------------------------
-echo Maven build in corso...
-echo -------------------------------------
-call mvnw.cmd clean package -DskipTests
-
-if errorlevel 1 (
-    echo Errore nella compilazione. Interruzione.
-    exit /b 1
-)
 
 echo -------------------------------------
 echo Arresto di eventuali container attivi...

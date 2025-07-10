@@ -42,6 +42,7 @@ Il frontend è sviluppato con **Thymeleaf** e integra un **grafico interattivo**
 - Naples  
 - Turin  
 - Florence  
+- Settimo Torinese
 
 Coordinate geografiche predefinite nella classe `CityCoordinates.java`.
 

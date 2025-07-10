@@ -8,6 +8,7 @@ public class CityCoordinates {
         "Milano", new double[]{45.4642, 9.1900},
         "Napoli", new double[]{40.8518, 14.2681},
         "Torino", new double[]{45.0703, 7.6869},
-        "Firenze", new double[]{43.7696, 11.2558}
+        "Firenze", new double[]{43.7696, 11.2558},
+        "Settimo Tse", new double[]{45.1372, 7.7702}
     );
 }
